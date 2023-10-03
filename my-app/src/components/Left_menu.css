@@ -1,0 +1,37 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    background-color: #CBC4FF;
+    width: 300px;
+    margin-top: 50px;
+    padding-top: 10px;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.search_box{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    padding-left: 10px;
+    border: 1px solid black;
+    width: 250px;
+}
+
+.search_input{
+    border: 0;
+    height: 40px;
+    width: 180px;
+    font-size: 20px;
+}
+
+.search_input:focus{
+    outline: none;
+}
+
+.magnifier{
+    width: 50px;
+}

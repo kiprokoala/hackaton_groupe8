@@ -1,0 +1,21 @@
+.bar{
+    min-width: 100vh;
+    height: 100px;
+    padding: 0 2%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: url('../images/paris_image.jpeg');
+    background-position-y: -1450px;
+    background-size: cover;
+}
+
+h1{
+    color: white;
+}
+
+.profile_picture{
+    width: 75px;
+}
