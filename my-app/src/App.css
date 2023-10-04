@@ -2,3 +2,40 @@ body, html{
     margin:0;
     padding:0;
 }
+
+.total{
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    min-width: 150vh;
+    max-width: 150vh;
+    min-height: 85vh;
+    max-height: 85vh;
+    margin-left: 2%;
+}
+
+.actualites{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.actualite{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E8E0FF;
+    width: 300px;
+    height: 300px;
+    margin: 0 2%;
+    border-radius: 15px;
+}
+
+.actu_image{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

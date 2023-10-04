@@ -1,6 +1,7 @@
 .bar{
     min-width: 100vh;
-    height: 100px;
+    height: 10vh;
+    min-height: 85px;
     padding: 0 2%;
 
     display: flex;

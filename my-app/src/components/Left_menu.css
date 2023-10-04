@@ -2,15 +2,16 @@
     display: flex;
     flex-direction: column;
     background-color: #CBC4FF;
-    width: 300px;
-    margin-top: 50px;
+    min-width: 38vh;
+    max-width: 38vh;
     padding-top: 10px;
-    align-items: center;
-    min-height: 80vh;
+    min-height: 88vh;
 }
 
 .search_box{
     background-color: white;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,13 +19,13 @@
     padding: 2px;
     padding-left: 10px;
     border: 1px solid black;
-    width: 250px;
+    width: 35vh;
 }
 
 .search_input{
     border: 0;
     height: 40px;
-    width: 180px;
+    width: 25vh;
     font-size: 20px;
 }
 
@@ -34,4 +35,18 @@
 
 .magnifier{
     width: 50px;
+}
+
+li{
+    margin-left: 10px;
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
 }
