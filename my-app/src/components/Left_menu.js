@@ -2,7 +2,7 @@
 import './Left_menu.css';
 import magnifier from '../images/magnifier.png';
 
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from 'react-router-dom'
 
 class Left_menu extends Component {
