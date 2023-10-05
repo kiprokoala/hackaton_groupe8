@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     background-color: #CBC4FF;
-    min-width: 38vh;
-    max-width: 38vh;
+    min-width: 25%;
+    max-width: 25%;
     padding-top: 10px;
     min-height: 88vh;
 }
@@ -19,13 +19,13 @@
     padding: 2px;
     padding-left: 10px;
     border: 1px solid black;
-    width: 35vh;
+    width: 80%;
 }
 
 .search_input{
     border: 0;
     height: 40px;
-    width: 25vh;
+    width: 70%;
     font-size: 20px;
 }
 
@@ -49,4 +49,5 @@ a{
 
 a:hover{
     color: white;
+    cursor: pointer;
 }
