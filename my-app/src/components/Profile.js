@@ -14,8 +14,10 @@ class Profile extends Component {
         console.log(sessionStorage.getItem("login") == "null")
     }
 
+    login = sessionStorage.getItem("login")
+
     render(){
-        if(sessionStorage.getItem("login") == "null"){
+        if(this.login == "null" ||this.login == null || this.login == ""){
             return(
                 <Login />
             );

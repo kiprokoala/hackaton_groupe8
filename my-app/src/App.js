@@ -18,28 +18,28 @@ class App extends Component {
         })
     }
 
-  render() {
-  return(
-    <div>
-        <Header />
-        <div className="total">
-            <Left_menu />
-            <div className="content">
-                <Poll />
-                <h2>Nos dernières actualités</h2>
-                <div className="actualites">
-                        {this.state.post.results?.map(actu =>
-                            <div className="actualite" id={actu.title}>
-                                {`${actu.title}`}
-                                <img className="actu_image" src={actu.cover_url}/>
-                            </div>
-                        )}
+    render() {
+        return(
+            <div>
+                <Header />
+                <div className="total">
+                    <Left_menu />
+                    <div className="content">
+                        <Poll />
+                        <h2>Nos dernières actualités</h2>
+                        <div className="actualites">
+                                {this.state.post.results?.map(actu =>
+                                    <div className="actualite" id={actu.title}>
+                                        <div className="title">{`${actu.title}`}</div>
+                                        <img className="actu_image" src={actu.cover_url}/>
+                                    </div>
+                                )}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    );
-  }
+        );
+    }
 }
 
 export default App;

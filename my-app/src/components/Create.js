@@ -7,16 +7,24 @@ import { Link } from 'react-router-dom'
 function Create() {
 
     function SessionDataStorage(){
-        sessionStorage.setItem("login", document.getElementById("login").value);
-        console.log(sessionStorage.getItem("login"))
+
     };
 
+    function onload(){
+        var this_select = document.getElementById("age");
+
+        for (var i=0; i < 151; i++)
+        {
+            this_select.options[this_select.options.length] = new Option(i);
+        }
+    }
+
     return (
-        <div>
+        <div onLoad={onload}>
             <Header />
             <div className="formulaire">
                 <form onSubmit={SessionDataStorage}>
-                    <h2>Connexion</h2>
+                    <h2>Inscription</h2>
                     <div className="champs">
                         <div className="champ">
                             <label className="label_field">Nom utilisateur</label>
@@ -35,10 +43,7 @@ function Create() {
                         <div className="ligne_champs">
                             <div className="champ champ_left">
                                 <label className="label_field">Âge</label>
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                </select>
+                                <select id="age"></select>
                             </div>
                             <div className="champ">
                                 <label className="label_field">Genre</label>
@@ -50,7 +55,7 @@ function Create() {
                                 </select>
                             </div>
                         </div>
-                        <button type="submit">Connexion</button>
+                        <button type="submit">Inscription</button>
                     </div>
                 </form>
                 <div className="bottom_text">

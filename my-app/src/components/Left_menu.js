@@ -12,7 +12,8 @@ class Left_menu extends Component {
 
     componentDidMount(){
         var temp = []
-        fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=100').then(response =>{
+        fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=100'
+        ).then(response =>{
             return response.json()
         }).then(result => {
             result.results?.map(actu => {
