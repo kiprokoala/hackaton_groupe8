@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="bar">
         <Link to={`/`}><h1>Parici</h1></Link>
-        <img src={profile} className="profile_picture" />
+        <Link to={`/profile`}><img src={profile} className="profile_picture" /></Link>
     </div>
   );
 }
