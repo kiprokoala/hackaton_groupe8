@@ -32,7 +32,7 @@ function Question() {
                 </div>
             )}
             <div className="button_save" onClick={save.bind(this)}>
-                coucou
+                Envoyer réponse
             </div>
         </div>
     );

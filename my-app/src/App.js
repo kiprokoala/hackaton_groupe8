@@ -48,6 +48,7 @@ class App extends Component {
     ]
 
     componentDidMount(){
+        document.title = "Parici"
         fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=4&order_by=updated_at').then((response) =>{
             return response.json()
         }).then((result) => {
