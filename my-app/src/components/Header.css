@@ -1,0 +1,44 @@
+.bar{
+    min-width: 100vh;
+    height: 10vh;
+    min-height: 85px;
+    padding: 0 2%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: url('../images/paris_image.jpeg');
+    transition: background-position-y;
+    background-size: cover;
+}
+
+@keyframes roll {
+  from {
+    background-position-y: 0;
+  }
+
+  to {
+    background-position-y: -450px;
+  }
+}
+
+.bar {
+  animation-duration: 8s;
+  animation-name: roll;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+h1{
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.profile_picture{
+    width: 75px;
+}
