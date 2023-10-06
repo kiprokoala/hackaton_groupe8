@@ -1,13 +1,30 @@
 .question{
     background-color: white;
     border-radius: 15px;
-    width: 30%;
+    width: 400px;
     min-height: 110px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     margin: 0 1%;
+}
+
+.button_save{
+    background-color: #E8FFD6;
+    border-radius: 15px;
+    min-width: 400px;
+    min-height: 40px;
+    align-self: end;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1%;
+}
+
+.button_save:hover{
+    cursor: pointer;
 }
 
 .questions{
