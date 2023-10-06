@@ -3,9 +3,7 @@
 import React, { Component } from "react";
 import '../App.css';
 import './Profile.css';
-import Header from './Header';
 import App from '../App';
-import Left_menu from './Left_menu';
 import Login from './Login';
 
 class Profile extends Component {
@@ -23,14 +21,8 @@ class Profile extends Component {
             );
         }else{
             return(
-                <div>
-                    <Header />
-                    <div className="total">
-                        <Left_menu />
-                        <div className="content">
-                            Profile loaded
-                        </div>
-                    </div>
+                <div className="content">
+                    Profile loaded
                 </div>
             );
         }

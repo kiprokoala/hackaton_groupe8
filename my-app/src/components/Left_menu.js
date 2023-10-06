@@ -1,43 +1,47 @@
 // src/Left_menu.js
 import './Left_menu.css';
-import magnifier from '../images/magnifier.png';
 
-import React, { Component, useState } from "react";
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from 'react-router-dom';
 
-class Left_menu extends Component {
-    state = {
-        post: []
-    }
+function LeftMenu() {
+    const [post, setPost] = useState([]);
+    const location = useLocation();
 
-    componentDidMount(){
-        var temp = []
-        fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=100'
-        ).then(response =>{
-            return response.json()
-        }).then(result => {
-            result.results?.map(actu => {
-                actu.tags?.map(mot => {
-                    if(!temp.includes(mot)){
-                        temp.push(mot)
+    async function fetchData() {
+        try {
+            const response = await fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/que-faire-a-paris-/records?limit=100');
+            const result = await response.json();
+
+            const temp = [];
+            result.results?.forEach(actu => {
+                actu.tags?.forEach(mot => {
+                    if (!temp.includes(mot)) {
+                        temp.push(mot);
                     }
-                })
-            })
-        })
-        this.setState({post: temp})
+                });
+            });
+
+            setPost(temp);
+        } catch (error) {
+            console.error("Une erreur s'est produite lors de la récupération des données :", error);
+        }
     }
 
-    render(){
-        return (
+    useEffect(() => {
+        // Mettre à jour les données lorsque l'URL change
+        fetchData();
+    }, [location.pathname]);
+
+    return (
         <div className="menu">
             <div>
-                {this.state.post?.map(actu =>
-                    <Link to={`/list/${actu}`} onClick={this.forceUpdate} ><ul id={actu}>{actu}</ul></Link>
+                {post?.map(actu =>
+                    <Link to={`/list/${actu}`} key={actu}><ul id={actu}>{actu}</ul></Link>
                 )}
             </div>
         </div>
-      );
-  }
+    );
 }
 
-export default Left_menu;
+export default LeftMenu;
