@@ -24,7 +24,7 @@ function Question() {
                     <fieldset>
                         {question.options.map((option) =>
                             <div className="option">
-                                <input type="radio" id={option} name="answer" value={option} />
+                                <input type="radio" id={option} name={question.title} value={option} />
                                 <label htmlFor="option">{option}</label>
                             </div>
                         )}
