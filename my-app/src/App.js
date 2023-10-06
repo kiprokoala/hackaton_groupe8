@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import './App.css';
-import Header from './components/Header';
-import Left_menu from './components/Left_menu';
 import Poll from './components/Poll';
 
 class App extends Component {
@@ -58,60 +56,53 @@ class App extends Component {
 
     render() {
         return(
-            <div>
-                <Header />
-                <div className="total">
-                    <Left_menu />
-                    {this.state.showDetail ?
-                        <div className="content">
-                            {this.state.post.results?.map(actu =>
-                                <div className="detail" id={actu.title}>
-                                    <div className="close_detail" onClick={this.toggleDetail.bind(this, 0)}>X</div>
-                                    <h2>{`${actu.title}`}</h2>
-                                    <div className="infos_detail">
-                                        <img className="detail_image" src={actu.cover_url}/>
-                                        <div>
-                                            <h3>Date : {`${actu.date_start}`} au {`${actu.date_end}`}</h3>
-                                            <h3>Lieu : {`${actu.address_street}`} {`${actu.address_zipcode}`}</h3>
-                                            <h3>{`${actu.description}`}</h3>
-                                            <a target="_blank" className="detail_link" href={`${actu.url}`}>Lien de l'évènement</a>
-                                        </div>
-                                    </div>
-                                    <div className="comments">
-                                        {this.data.map(com =>
-                                            <div className="comment">
-                                                {`${com.user}`}
-                                                <div className="comment_text">
-                                                    {`${com.com}`}
-                                                </div>
-                                            </div>
-                                        )}
-                                        <div className="comment_form">
-                                            <textarea className="comment_input" id="input_com" />
-                                            <div className="comment_add" onClick={this.add_com.bind(this)}>
-                                                Ajouter commentaire
-                                            </div>
-                                        </div>
-                                    </div>
+            this.state.showDetail ?
+                <div className="content">
+                    {this.state.post.results?.map(actu =>
+                        <div className="detail" id={actu.title}>
+                            <div className="close_detail" onClick={this.toggleDetail.bind(this, 0)}>X</div>
+                            <h2>{`${actu.title}`}</h2>
+                            <div className="infos_detail">
+                                <img className="detail_image" src={actu.cover_url}/>
+                                <div>
+                                    <h3>Date : {`${actu.date_start}`} au {`${actu.date_end}`}</h3>
+                                    <h3>Lieu : {`${actu.address_street}`} {`${actu.address_zipcode}`}</h3>
+                                    <h3>{`${actu.description}`}</h3>
+                                    <a target="_blank" className="detail_link" href={`${actu.url}`}>Lien de l'évènement</a>
                                 </div>
-                            )}
-                        </div>
-                        :
-                        <div className="content">
-                            <Poll />
-                            <h2>Nos dernières actualités</h2>
-                            <div className="actualites">
-                                {this.state.post.results?.map(actu =>
-                                    <div className="actualite" onClick={this.toggleDetail.bind(this, actu.id)} id={actu.title}>
-                                        <div className="title">{`${actu.title}`}</div>
-                                        <img className="actu_image" src={actu.cover_url}/>
+                            </div>
+                            <div className="comments">
+                                {this.data.map(com =>
+                                    <div className="comment">
+                                        {`${com.user}`}
+                                        <div className="comment_text">
+                                            {`${com.com}`}
+                                        </div>
                                     </div>
                                 )}
+                                <div className="comment_form">
+                                    <textarea className="comment_input" id="input_com" />
+                                    <div className="comment_add" onClick={this.add_com.bind(this)}>
+                                        Ajouter commentaire
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    }
+                    )}
                 </div>
-            </div>
+                :
+                <div className="content">
+                    <Poll />
+                    <h2>Nos dernières actualités</h2>
+                    <div className="actualites">
+                        {this.state.post.results?.map(actu =>
+                            <div className="actualite" onClick={this.toggleDetail.bind(this, actu.id)} id={actu.title}>
+                                <div className="title">{`${actu.title}`}</div>
+                                <img className="actu_image" src={actu.cover_url}/>
+                            </div>
+                        )}
+                    </div>
+                </div>
         );
     }
 }
